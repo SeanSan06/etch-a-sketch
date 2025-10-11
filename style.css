@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+    width: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Title area */
+#title-area {
+
+}
+
+/* Drawing area */
+#drawing-area {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    background-color: gray;
+    border: 2px solid blue;
+}
