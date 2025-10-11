@@ -18,24 +18,26 @@ body {
 }
 
 /* Drawing area */
-
-
 @media (orientation: landscape) {
-#drawing-area {
-    display: flex;
-    height: 70%;
-    aspect-ratio: 1/1;
-    background-color: whitesmoke;
-    border: 8px solid black;
-}
+    #drawing-area {
+        display: grid;
+        height: 70%;
+        aspect-ratio: 1/1;
+        background-color: whitesmoke;
+        border: 8px solid black;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+    }
 }
 
 @media (orientation: portrait) {
-#drawing-area {
-    display: flex;
-    width: 80%;
-    aspect-ratio: 1/1;
-    background-color: whitesmoke;
-    border: 8px solid black;
-}
+    #drawing-area {
+        display: grid;
+        width: 80%;
+        aspect-ratio: 1/1;
+        background-color: whitesmoke;
+        border: 8px solid black;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+    }
 }
