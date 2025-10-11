@@ -20,24 +20,29 @@ body {
 /* Drawing area */
 @media (orientation: landscape) {
     #drawing-area {
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         height: 70%;
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
-        grid-template-rows: repeat(8, 1fr);
-        grid-template-columns: repeat(8, 1fr);
     }
 }
 
 @media (orientation: portrait) {
     #drawing-area {
-        display: grid;
-        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 70%;
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
-        grid-template-rows: repeat(8, 1fr);
-        grid-template-columns: repeat(8, 1fr);
     }
+}
+
+#drawing-area div {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 6.25%;
+    aspect-ratio: 1/1;
 }
