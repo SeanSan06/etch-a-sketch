@@ -6,7 +6,10 @@ function grid() {
         drawingArea.appendChild(gridBox);
 
         gridBox.addEventListener("mouseover", () => {
-            gridBox.style.backgroundColor = "black";
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+            gridBox.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
         });
     }
 }
