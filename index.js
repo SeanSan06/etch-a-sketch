@@ -1,6 +1,6 @@
 const drawingArea = document.querySelector("#drawing-area");
 function grid() {
-    let grids = 16;
+    let grids = 8;
     for(let i = 0; i < grids*grids; ++i) {
         const gridBox = document.createElement("div");
         // gridBox.style.border = "1px solid blue";
@@ -17,7 +17,7 @@ function grid() {
 }
 
 function sizeEachGridBox(gridBox, grids) {
-    gridBox.style.width = `6.25%`;
+    gridBox.style.width = (100.0/grids) + "%";
     gridBox.style.aspectRatio = "1/1";
 
 }

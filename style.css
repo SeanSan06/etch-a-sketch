@@ -42,6 +42,5 @@ body {
 
 #drawing-area div {
     box-sizing: border-box;
-    border: 1px solid black;
     aspect-ratio: 1/1;
 }
