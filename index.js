@@ -23,9 +23,13 @@ function sizeEachGridBox(gridBox, grids) {
 }
 
 function askForGridBox() {
-    let userInputForGridBox = prompt("Enter a grid size!");
-    while(userInputForGridBox > 100) {
-        userInputForGridBox = prompt("Enter a grid size under 100!");
+    userInputForGridBox = prompt("Enter a grid size between 1-100!");
+    userInputForGridBox = Number(userInputForGridBox);
+    let invalid = true;
+    if(!Number.isInteger(userInputForGridBox)) {
+        askForGridBox()
+    } else if(userInputForGridBox > 100 || userInputForGridBox <= 0) {
+        askForGridBox()
     }
 
     grid(userInputForGridBox);
