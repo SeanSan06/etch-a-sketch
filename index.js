@@ -1,6 +1,6 @@
 const drawingArea = document.querySelector("#drawing-area");
-function grid() {
-    let grids = 8;
+function grid(userInputForGridBox) {
+    let grids = userInputForGridBox;
     for(let i = 0; i < grids*grids; ++i) {
         const gridBox = document.createElement("div");
         // gridBox.style.border = "1px solid blue";
@@ -22,4 +22,9 @@ function sizeEachGridBox(gridBox, grids) {
 
 }
 
-grid();
+function askForGridBox() {
+    let userInputForGridBox = prompt("Enter a grid size!");
+    grid(userInputForGridBox);
+}
+
+askForGridBox();
