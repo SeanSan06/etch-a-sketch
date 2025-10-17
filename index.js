@@ -35,11 +35,9 @@ function askForGridSize() {
     drawGrid(userInputForGridBox);
 }
 
-
-
 const q_sizing_button = document.querySelector("#sizing-button");
 q_sizing_button.addEventListener("click", (event) => {
-    removeAllChildNodes()
+    removeAllChildNodes();
     askForGridSize();
 });
 
@@ -49,4 +47,4 @@ function removeAllChildNodes() {
     }
 }
 
-askForGridSize()
+askForGridSize();

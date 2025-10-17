@@ -1,6 +1,6 @@
 html {
     height: 100%;
-    width: auto;
+    width: 100%;
 }
 
 body {
@@ -17,15 +17,22 @@ body {
     size: 10%;
 }
 
-/* Sizing Button Area */
-#sizing-button {
-    width: 15%;
-    aspect-ratio: 2/1;
-    margin-bottom: 8px;
+/* Button Area */
+#button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+#sizing-button, #random-color-button, #gray-scale-button {
+    width: 30%;
+    aspect-ratio: 1/1;
+    margin-bottom: 12px;
     background-color: lightgreen;
 }
 
-#sizing-button p {
+#sizing-button p, #random-color-button, #gray-scale-button {
     font-size: 30px;
 }
 
@@ -45,7 +52,7 @@ body {
     #drawing-area {
         display: flex;
         flex-wrap: wrap;
-        height: 70%;
+        width: 70%;
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
