@@ -1,6 +1,6 @@
 html {
     height: 100%;
-    width: auto;
+    width: 100%;
 }
 
 body {
@@ -14,7 +14,32 @@ body {
 
 /* Title area */
 #title-area {
+    size: 10%;
+}
 
+/* Button Area */
+#button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+#sizing-button, #random-color-button, #gray-scale-button {
+    width: 30%;
+    aspect-ratio: 1/1;
+    margin-bottom: 12px;
+    background-color: lightgreen;
+    transition: background-color 0.5s ease;
+}
+
+#sizing-button:hover {
+  background-color: rgb(44, 129, 44); /* Darker blue on hover */
+  cursor: pointer; /* Changes the cursor to a hand icon */
+}
+
+#sizing-button p, #random-color-button, #gray-scale-button {
+    font-size: 30px;
 }
 
 /* Drawing area */
@@ -33,7 +58,7 @@ body {
     #drawing-area {
         display: flex;
         flex-wrap: wrap;
-        height: 70%;
+        width: 70%;
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
