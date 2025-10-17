@@ -1,38 +1,38 @@
 const drawingArea = document.querySelector("#drawing-area");
-function grid(userInputForGridBox) {
+function drawGrid(userInputForGridBox) {
     let grids = userInputForGridBox;
     for(let i = 0; i < grids*grids; ++i) {
-        const gridBox = document.createElement("div");
-        // gridBox.style.border = "1px solid blue";
-        sizeEachGridBox(gridBox, grids);
-        drawingArea.appendChild(gridBox);
+        const gridBoxElement = document.createElement("div");
 
-        gridBox.addEventListener("mouseover", () => {
+        setSizeGridBox(gridBoxElement, grids);
+        drawingArea.appendChild(gridBoxElement);
+
+        gridBoxElement.addEventListener("mouseover", () => {
             let red = Math.floor(Math.random() * 256);
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
-            gridBox.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
+            gridBoxElement.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
         });
     }
 }
 
-function sizeEachGridBox(gridBox, grids) {
-    gridBox.style.width = (100.0/grids) + "%";
-    gridBox.style.aspectRatio = "1/1";
+function setSizeGridBox(gridBoxElement, grids) {
+    gridBoxElement.style.width = (100.0/grids) + "%";
+    gridBoxElement.style.aspectRatio = "1/1";
 
 }
 
-function askForGridBox() {
+function askForGridSize() {
     userInputForGridBox = prompt("Enter a grid size between 1-100!");
     userInputForGridBox = Number(userInputForGridBox);
     let invalid = true;
     if(!Number.isInteger(userInputForGridBox)) {
-        askForGridBox()
+        askForGridSize()
     } else if(userInputForGridBox > 100 || userInputForGridBox <= 0) {
-        askForGridBox()
+        askForGridSize()
     }
 
-    grid(userInputForGridBox);
+    drawGrid(userInputForGridBox);
 }
 
-askForGridBox();
+askForGridSize();
