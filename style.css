@@ -30,6 +30,12 @@ body {
     aspect-ratio: 1/1;
     margin-bottom: 12px;
     background-color: lightgreen;
+    transition: background-color 0.5s ease;
+}
+
+#sizing-button:hover {
+  background-color: rgb(44, 129, 44); /* Darker blue on hover */
+  cursor: pointer; /* Changes the cursor to a hand icon */
 }
 
 #sizing-button p, #random-color-button, #gray-scale-button {
