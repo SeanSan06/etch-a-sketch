@@ -1,11 +1,11 @@
-const drawingArea = document.querySelector("#drawing-area");
+const q_drawingArea = document.querySelector("#drawing-area");
 function drawGrid(userInputForGridBox) {
     let grids = userInputForGridBox;
     for(let i = 0; i < grids*grids; ++i) {
         const gridBoxElement = document.createElement("div");
 
         setSizeGridBox(gridBoxElement, grids);
-        drawingArea.appendChild(gridBoxElement);
+        q_drawingArea.appendChild(gridBoxElement);
 
         gridBoxElement.addEventListener("mouseover", () => {
             let red = Math.floor(Math.random() * 256);
@@ -35,4 +35,18 @@ function askForGridSize() {
     drawGrid(userInputForGridBox);
 }
 
-askForGridSize();
+
+
+const q_sizing_button = document.querySelector("#sizing-button");
+q_sizing_button.addEventListener("click", (event) => {
+    removeAllChildNodes()
+    askForGridSize();
+});
+
+function removeAllChildNodes() {
+    while (q_drawingArea.firstChild) {
+        q_drawingArea.removeChild(q_drawingArea.firstChild);
+    }
+}
+
+askForGridSize()
