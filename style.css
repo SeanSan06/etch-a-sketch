@@ -14,7 +14,19 @@ body {
 
 /* Title area */
 #title-area {
+    size: 10%;
+}
 
+/* Sizing Button Area */
+#sizing-button {
+    width: 15%;
+    aspect-ratio: 2/1;
+    margin-bottom: 8px;
+    background-color: lightgreen;
+}
+
+#sizing-button p {
+    font-size: 30px;
 }
 
 /* Drawing area */
