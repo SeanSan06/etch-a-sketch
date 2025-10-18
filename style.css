@@ -16,21 +16,33 @@ body {
 /* Title area */
 #title-area {
     size: 10%;
+    animation: titleSway 3.5s ease-in-out infinite;
 }
 
-@media (orientation: landscape) {
-    #title-area {
-        size: 10%;
-        font-size: 3vw;
+    @media (orientation: landscape) {
+        #title-area {
+            font-size: 3vw;
+            
+        }
     }
-}
 
-@media (orientation: portrait) {
-    #title-area {
-        size: 10%;
-        font-size: 5vw;
+    @media (orientation: portrait) {
+        #title-area {
+            font-size: 5vw;
+        }
     }
-}
+
+    @keyframes titleSway {
+        0% {
+            transform: rotate(3deg);
+        }        
+        50% {
+            transform: rotate(-3deg);
+        }
+        100% {
+            transform: rotate(3deg);
+        }
+    }   
 
 /* Button Area */
 #button-area {
