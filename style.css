@@ -27,7 +27,7 @@ body {
     width: min(65vw, 65vh);
 }
 
-#sizing-button, #random-color-button, #gray-scale-button {
+#sizing-button {
     aspect-ratio: 2/1;
     margin-bottom: 12px;
     background-color: lightgreen;
@@ -36,10 +36,44 @@ body {
     min-width: 0;
 }
 
-#sizing-button:hover {
-  background-color: rgb(65, 150, 65); /* Darker blue on hover */
-  cursor: pointer; /* Changes the cursor to a hand icon */
+    #sizing-button:hover {
+        background-color: rgb(65, 150, 65); /* Darker blue on hover */
+        cursor: pointer; /* Changes the cursor to a hand icon */
+    }
+
+#random-color-button {
+    aspect-ratio: 2/1;
+    margin-bottom: 12px;
+    transition: background-color 0.50s ease;
+    flex: 1 1 0;
+    min-width: 0;
+
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo);
+    background-size: 800% 800%;
+    animation: rainbowFlow 5s linear infinite alternate;
+    color: black; /* keep text black */
+    transition: transform 0.1s;
 }
+
+    @keyframes rainbowFlow {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+#gray-scale-button {
+    aspect-ratio: 2/1;
+    margin-bottom: 12px;
+    background-color: gray;
+    transition: background-color 0.50s ease;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+
 
 #sizing-button p, #random-color-button p, #gray-scale-button p {
     margin: 0;
