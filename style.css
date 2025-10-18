@@ -18,22 +18,22 @@ body {
 }
 
 /* Button Area */
-
-
 #button-area {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: min(70vw, 70vh);
+    gap: 12px;
+    width: min(65vw, 65vh);
 }
 
 #sizing-button, #random-color-button, #gray-scale-button {
-    width: 30%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/1;
     margin-bottom: 12px;
     background-color: lightgreen;
     transition: background-color 0.50s ease;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 #sizing-button:hover {
@@ -41,8 +41,9 @@ body {
   cursor: pointer; /* Changes the cursor to a hand icon */
 }
 
-#sizing-button p, #random-color-button, #gray-scale-button {
-    font-size: 30px;
+#sizing-button p, #random-color-button p, #gray-scale-button p {
+    margin: 0;
+    font-size: clamp(14px, 2vw, 32px);
 }
 
 /* Drawing area */
