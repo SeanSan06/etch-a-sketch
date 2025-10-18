@@ -18,11 +18,14 @@ body {
 }
 
 /* Button Area */
+
+
 #button-area {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
-    width: 70%;
+    width: min(70vw, 70vh);
 }
 
 #sizing-button, #random-color-button, #gray-scale-button {
@@ -30,11 +33,11 @@ body {
     aspect-ratio: 1/1;
     margin-bottom: 12px;
     background-color: lightgreen;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.50s ease;
 }
 
 #sizing-button:hover {
-  background-color: rgb(44, 129, 44); /* Darker blue on hover */
+  background-color: rgb(65, 150, 65); /* Darker blue on hover */
   cursor: pointer; /* Changes the cursor to a hand icon */
 }
 
@@ -47,7 +50,7 @@ body {
     #drawing-area {
         display: flex;
         flex-wrap: wrap;
-        height: 70%;
+        width: min(70vw, 70vh);
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
@@ -58,7 +61,7 @@ body {
     #drawing-area {
         display: flex;
         flex-wrap: wrap;
-        width: 70%;
+        width: min(70vw, 70vh);
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
