@@ -17,6 +17,20 @@ body {
     size: 10%;
 }
 
+@media (orientation: landscape) {
+    #title-area {
+        size: 10%;
+        font-size: 3vw;
+    }
+}
+
+@media (orientation: portrait) {
+    #title-area {
+        size: 10%;
+        font-size: 5vw;
+    }
+}
+
 /* Button Area */
 #button-area {
     display: flex;
