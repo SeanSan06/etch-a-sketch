@@ -1,6 +1,7 @@
 html {
-    height: 100%;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    background: linear-gradient(180deg, lightblue, skyblue, rgb(135, 162, 235))
 }
 
 body {
@@ -51,6 +52,7 @@ body {
 }
 
     #sizing-button:hover {
+        transform: scale(1.05);
         background-color: rgb(65, 150, 65); /* Darker blue on hover */
         cursor: pointer; /* Changes the cursor to a hand icon */
     }
@@ -78,6 +80,11 @@ body {
         }
     }
 
+    #random-color-button:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
 #gray-scale-button {
     aspect-ratio: 2/1;
     margin-bottom: 12px;
@@ -100,6 +107,11 @@ body {
         100% {
             background-position: 100% 50%;
         }
+    }
+
+    #gray-scale-button:hover {
+        transform: scale(1.05);
+        cursor: pointer;
     }
 
 
