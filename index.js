@@ -1,3 +1,7 @@
+let rainbowActive = true;
+let grayscaleActive = false;
+let grayscaleColor = 0;
+
 const q_drawingArea = document.querySelector("#drawing-area");
 function drawGrid(userInputForGridBox) {
     let grids = userInputForGridBox;
@@ -6,12 +10,22 @@ function drawGrid(userInputForGridBox) {
 
         setSizeGridBox(gridBoxElement, grids);
         q_drawingArea.appendChild(gridBoxElement);
-
+        
         gridBoxElement.addEventListener("mouseover", () => {
-            let red = Math.floor(Math.random() * 256);
-            let green = Math.floor(Math.random() * 256);
-            let blue = Math.floor(Math.random() * 256);
-            gridBoxElement.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
+            if(rainbowActive) {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                gridBoxElement.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
+            }
+            if(grayscaleActive) {
+                grayscaleColor += 5;
+                if(grayscaleColor >= 255) {
+                    grayscaleColor = 0;
+                }
+                gridBoxElement.style.backgroundColor =`rgb(${grayscaleColor}, ${grayscaleColor}, ${grayscaleColor})`;
+            }
+
         });
     }
 }
@@ -46,5 +60,17 @@ function removeAllChildNodes() {
         q_drawingArea.removeChild(q_drawingArea.firstChild);
     }
 }
+
+const q_rainbow_button = document.querySelector("#random-color-button");
+q_rainbow_button.addEventListener("click", (event) => {
+    rainbowActive = true;
+    grayscaleActive = false;
+});
+
+const q_grayscale_button = document.querySelector("#gray-scale-button");
+q_grayscale_button.addEventListener("click", (event) => {
+    rainbowActive = false;
+    grayscaleActive = true;   
+});
 
 askForGridSize();

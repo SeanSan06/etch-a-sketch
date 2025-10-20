@@ -142,6 +142,7 @@ body {
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
+        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
     }
 }
 
@@ -153,6 +154,7 @@ body {
         aspect-ratio: 1/1;
         background-color: whitesmoke;
         border: 8px solid black;
+        box-shadow: 0 0 20px 5px rgb(255, 255, 255);
     }
 }
 
