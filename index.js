@@ -1,5 +1,6 @@
 let rainbowActive = true;
 let grayscaleActive = false;
+let grayscaleColor = 0;
 
 const q_drawingArea = document.querySelector("#drawing-area");
 function drawGrid(userInputForGridBox) {
@@ -18,8 +19,11 @@ function drawGrid(userInputForGridBox) {
                 gridBoxElement.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
             }
             if(grayscaleActive) {
-                let black = Math.floor(Math.random() * 256);
-                gridBoxElement.style.backgroundColor =`rgb(${black}, ${black}, ${black})`;
+                grayscaleColor += 5;
+                if(grayscaleColor >= 255) {
+                    grayscaleColor = 0;
+                }
+                gridBoxElement.style.backgroundColor =`rgb(${grayscaleColor}, ${grayscaleColor}, ${grayscaleColor})`;
             }
 
         });
