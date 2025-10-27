@@ -126,8 +126,6 @@ body {
         cursor: pointer;
     }
 
-
-
 #sizing-button p, #random-color-button p, #gray-scale-button p {
     margin: 0;
     font-size: clamp(14px, 2vw, 32px);

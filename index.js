@@ -33,7 +33,6 @@ function drawGrid(userInputForGridBox) {
 function setSizeGridBox(gridBoxElement, grids) {
     gridBoxElement.style.width = (100.0/grids) + "%";
     gridBoxElement.style.aspectRatio = "1/1";
-
 }
 
 function askForGridSize() {
@@ -41,12 +40,12 @@ function askForGridSize() {
     userInputForGridBox = Number(userInputForGridBox);
     let invalid = true;
     if(!Number.isInteger(userInputForGridBox)) {
-        askForGridSize()
+        askForGridSize();
     } else if(userInputForGridBox > 100 || userInputForGridBox <= 0) {
-        askForGridSize()
+        askForGridSize();
+    } else {
+        drawGrid(userInputForGridBox);
     }
-
-    drawGrid(userInputForGridBox);
 }
 
 const q_sizing_button = document.querySelector("#sizing-button");
