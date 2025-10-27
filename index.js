@@ -25,7 +25,9 @@ function drawGrid(userInputForGridBox) {
                 }
                 gridBoxElement.style.backgroundColor =`rgb(${grayscaleColor}, ${grayscaleColor}, ${grayscaleColor})`;
             }
-
+            if(blackBrushActive) {
+                gridBoxElement.style.backgroundColor =`rgb(${0}, ${0}, ${0})`;
+            }
         });
     }
 }
@@ -64,12 +66,21 @@ const q_rainbow_button = document.querySelector("#random-color-button");
 q_rainbow_button.addEventListener("click", (event) => {
     rainbowActive = true;
     grayscaleActive = false;
+    blackBrushActive = false;  
 });
 
 const q_grayscale_button = document.querySelector("#gray-scale-button");
 q_grayscale_button.addEventListener("click", (event) => {
     rainbowActive = false;
-    grayscaleActive = true;   
+    grayscaleActive = true; 
+    blackBrushActive = false;  
+});
+
+const q_black_brush_button = document.querySelector("#black-brush-button");
+q_black_brush_button.addEventListener("click", (event) => {
+    rainbowActive = false;
+    grayscaleActive = false;
+    blackBrushActive = true;  
 });
 
 askForGridSize();
