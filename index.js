@@ -10,6 +10,8 @@ function drawGrid(userInputForGridBox) {
 
         setSizeGridBox(gridBoxElement, grids);
         q_drawingArea.appendChild(gridBoxElement);
+        gridBoxElement.style.backgroundColor =`rgb(${255}, ${255}, ${255})`;
+        gridBoxElement.style.border = "1px solid white";
         
         gridBoxElement.addEventListener("mouseover", () => {
             if(rainbowActive) {
