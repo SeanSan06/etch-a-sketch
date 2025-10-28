@@ -1,6 +1,8 @@
 let rainbowActive = true;
 let grayscaleActive = false;
 let grayscaleColor = 0;
+let blackBrushActive = false;
+let mouseDown = false;
 
 const q_drawingArea = document.querySelector("#drawing-area");
 function drawGrid(userInputForGridBox) {
@@ -12,13 +14,16 @@ function drawGrid(userInputForGridBox) {
         q_drawingArea.appendChild(gridBoxElement);
         gridBoxElement.style.backgroundColor =`rgb(${255}, ${255}, ${255})`;
         gridBoxElement.style.border = "1px solid white";
+        gridBoxElement.style.boxSizing = "borderBox";
         
-        gridBoxElement.addEventListener("mouseover", () => {
+
+        function paintDiv(div) {
             if(rainbowActive) {
                 let red = Math.floor(Math.random() * 256);
                 let green = Math.floor(Math.random() * 256);
                 let blue = Math.floor(Math.random() * 256);
                 gridBoxElement.style.backgroundColor =`rgb(${red}, ${green}, ${blue})`;
+                gridBoxElement.style.border =`1px solid rgb(${red}, ${green}, ${blue})`;
             }
             if(grayscaleActive) {
                 grayscaleColor += 5;
@@ -26,11 +31,22 @@ function drawGrid(userInputForGridBox) {
                     grayscaleColor = 0;
                 }
                 gridBoxElement.style.backgroundColor =`rgb(${grayscaleColor}, ${grayscaleColor}, ${grayscaleColor})`;
+                gridBoxElement.style.border =`1px solid rgb(${grayscaleColor}, ${grayscaleColor}, ${grayscaleColor})`;
             }
             if(blackBrushActive) {
                 gridBoxElement.style.backgroundColor =`rgb(${0}, ${0}, ${0})`;
+                gridBoxElement.style.border =`1px solid rgb(${0}, ${0}, ${0})`;
+            }
+        };
+
+        gridBoxElement.addEventListener("mousedown", () => paintDiv(gridBoxElement));
+        gridBoxElement.addEventListener("mouseenter", () => {
+            if(mouseDown) {
+                paintDiv(gridBoxElement);
             }
         });
+
+        q_drawingArea.appendChild(gridBoxElement);        
     }
 }
 
@@ -84,6 +100,14 @@ q_black_brush_button.addEventListener("click", (event) => {
     grayscaleActive = false;
     blackBrushActive = true;  
 });
+
+// Sets whether the mouse is down is true or false.
+q_drawingArea.addEventListener("mousedown", () => {
+    mouseDown = true;
+})
+document.addEventListener("mouseup", () => {
+    mouseDown = false;
+})
 
 // CDN html2canvas code: captures the drawing area and downloads as a PNG
 const q_save_as_png_button = document.querySelector("#save-as-png-button");
