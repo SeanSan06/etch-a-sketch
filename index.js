@@ -83,4 +83,15 @@ q_black_brush_button.addEventListener("click", (event) => {
     blackBrushActive = true;  
 });
 
+// CDN html2canvas code: captures the drawing area and downloads as a PNG
+const q_save_as_png_button = document.querySelector("#save-as-png-button");
+q_save_as_png_button.addEventListener("click", (event) => {
+    html2canvas(document.querySelector("#drawing-area")).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "pixel-drawing.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    });
+});
+
 askForGridSize();
