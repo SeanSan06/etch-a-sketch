@@ -45,8 +45,6 @@ function drawGrid(userInputForGridBox) {
                 paintDiv(gridBoxElement);
             }
         });
-
-        q_drawingArea.appendChild(gridBoxElement);        
     }
 }
 
